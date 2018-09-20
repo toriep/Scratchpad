@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="encapsulation and closure">
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+  <style type="text/css">
+body{
+	height: 100vh;
+	margin: 0;
+}
+#container > div{
+  margin: 5px;
+  border: 1px solid black;
+}
+#container, #display{
+  float: left;
+  height: 100%;
+}
+#container{
+  width: 75%;
+}
+#display{
+  width: 25%;
+  background-color: grey;
+}
+  </style>
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script type="text/javascript">
+
+// $(document).ready(displayStudents);
+// var students = [
+// 	{name: 'Gerry', favColor:'yellow' ,favAnimal: 'llama'},
+// 	{name: 'Jaytrin', favColor:'black' , favAnimal: 'jaguar'},
+// 	{name: 'Jonathan', favColor:'red' , favAnimal: 'fainting goat'},
+// 	{name: 'Sarah', favColor:'white' , favAnimal: 'armadillo'},
+// 	{name: 'Esther', favColor:'pink' , favAnimal: 'cat'},
+// 	{name: 'Hank', favColor:'orange' , favAnimal: 'honey badger'},
+// ];
+
+// function displayStudents(){
+//     debugger;
+//     for(var s=0;s<students.length;s++){
+//         var div = $('<div>').text(students[s].name);
+//         $('#display').append(div);  
+//         (function(studentDiv, index){
+//             studentDiv.click(function(){
+//             studentDiv.text(students[index].name+ "'s favorite color is "+students[index].favColor+" and their favorite animal is "+students[index].favAnimal);
+//          })
+//         })(div,s);
+//     }  
+// }
+
+
+function add(number){
+    function addMore(){
+        num = 0
+        num = num + number
+        return num;
+    }
+    return addMore;
+}
+
+// var n = add(3)(2)(5)();;
+
+
+</script>
+</head>
+<body>
+  <div id="container"></div>
+  <div id="display"></div>
+</body>
+</html>

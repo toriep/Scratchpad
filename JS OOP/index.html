@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+/*class definition*/
+class Dog{
+	//name, color, age, size, bark
+	constructor( optionsObject ){
+		this.name = optionsObject.name;
+		this.color = optionsObject.color;
+		this.size = optionsObject.bodySize;
+		if(optionsObject.barkSound===undefined){
+			this.barkSound = 'woof';
+		} else {
+			this.barkSound = optionsObject.barkSound;
+		}
+		this.stomachCapacity = 10;
+		this.currentCapacity = 3;
+		this.isAlive = true;
+	}
+	bark(){
+		console.log(this.barkSound);
+	}
+	eat( foodQuantity ){
+		if(this.currentCapacity + foodQuantity > this.stomachCapacity){
+			foodQuantity = this.stomachCapacity - this.currentCapacity;
+		}
+		this.currentCapacity += foodQuantity;
+	}
+	speak( message ){
+		console.log(this.name+ ' says ' + message)
+	}
+
+}
+/*
+the constructor function is the function that is run when
+the object is instantiated 
+*/
+
+/* class instantiation */
+var fidoOptions = {
+	name: 'fido',
+	color: 'purple',
+	age: 3,
+	bodySize: 10,
+	barkSound: 'meow'
+}
+var fido = new Dog( fidoOptions );
+
+var fiffy = new Dog({ 
+	name: 'fiffy',
+	color: 'white',
+	age: 7,
+	bodySize: 7,
+	barkSound: 'le woof'
+});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

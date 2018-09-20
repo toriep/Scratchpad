@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script type="text/javascript">
+        function ajaxFinishedSuccessfully(responseData){
+            var music= responseData.feed.entry;
+            for(var m=0;m<music.length;m++){
+                var backImage = $('<img>', {
+                src: ""+music[m]['im:image'][2].label
+                });
+            $('body').append(backImage);
+            }
+
+        }
+        function whoops(){
+            console.log('something went wrong');
+        }
+        var ajaxParams = {
+            url: 'http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=30/json',//where are we going
+            success: ajaxFinishedSuccessfully,//when we finish calling back, call this function. Basically success handler for AJAX
+            method: 'post',//what action to send a long with it. 'get' add the data to the url name, it's the default. All the data is attached to the url. With 'post', the data is protected
+            data: {//the data to be sent with the request
+                name: 'Torie',
+                favoriteNumber: 8,
+            },
+            dataType: 'json',//what format we expect it to come back in
+            error: whoops, //what do we do when we get there and it's wrong
+        }
+        $.ajax(ajaxParams)
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

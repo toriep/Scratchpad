@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+    <script>
+        /*
+        For variables, functions define their own scope
+        You can only call a function within the scope it's in
+        You can put any codes inside a function
+        All javascript in a browser live in a window
+        elements live in a document, also known as the dom
+        parameters make local variables
+        set whatever the functions returns to a variable instead of directly returning it
+        console.log only goes to the console
+        it's better to make many functions and call them within each other than one long ass function
+        generally, you want the functions take in something and return something purely or change something, no side effect(which means it doesn't do many things inside it,
+        eg. return and document.writeIn
+        if you see the same codes in many places, then find a way to consolidate it
+        the var keyword, and only it, hoists the declaration up to the top of the scope. the var keyword put the variable on top of the scope, but not
+        the assignment, be it local or global scope
+        functions are hoisted in their entirety. You can call them first
+        lexical scope (the parental scope)
+        there's only one definition of function but many places you can call it
+        ! ONLY FUNCTIONS DEFINITION MAKE A SCOPE, NOT LOOPS, IF, SWITCH, WHATEVER
+        You know if it's a local variable when there's a var something inside or a parameter
+        functions can't see into each other's variables, you have to return it or make it a global variable
+        ! Every time you run a function, it instantiates a new memory space, basically make a new space(new bubble)
+        When you run a function, it makes a brand new copy, a brand new memory space
+        When a function is run, its memory space is stored in its scope?
+        It's based on where the function is defined, not called
+        Where the scope is where the function is defined, where the curly bracket is
+        if you specify a variable without var, you make it auto global
+        variables without declaration only becomes global when it's called
+        when a function ends, every variable inside of it is destroyed
+        After the function runs, it makes its own copy again
+
+        Find variables 3.5 rule IMPORTANT!!!!!!!!!!!!!
+            1/what scope is the variable in? have to know where you are to know what you have access to
+            2/ Is there a LOCAL definition of that variable in this scope
+            3/ If the answer is no, what is the lexical scope?
+            4/ iS there a variable in the lexical scope?
+         */
+        function addNumbers(num1,num2){
+            var result = num1+num2;
+            return result;
+        }
+
+        function squareTheNumber(num,booolean) {
+            var squaredNumber = num * num;
+            if (booolean === true && num < 0) {
+                squaredNumber *= -1;
+            }
+           return squaredNumber
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
